@@ -1,0 +1,441 @@
+{% extends "base/base.html" %}
+
+{% block title %}
+| vehicules
+{% endblock  %}
+
+{% block content %}
+<div class="row d-flex justify-content-center">
+    <h1 class="text-secondary ms-4">véhicules</h1>
+<div class="row">
+    <img src="https://www.expat-dakar.com/assets/ed-site/img/static/car-search-hero-desktop.ebd18baa.png" alt="">
+</div>
+<div class="row  bg-light w-75 d-flex justify-content-center" style="margin-top:-15%">
+    <!-- Tab links -->
+    <div class="tab d-flex justify-content-around align-items-sm-start">
+        <button class="tablinks" onclick="openCity(event, 'categories')">
+            <i class="fa fa-solid fa-bars fa-lg text-secondary"></i>
+            Toutes les catégories
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'votures')">
+            <i class="fa fa-solid fa-car fa-lg text-secondary"></i>
+            voitures
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'moto-scooters')">
+            <i class="fa fa-solid fa-moped"></i>
+            Moto & scooters
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'location')">
+            <i class="fa fa-solid fa-car-wrench fa-lg text-secondary"></i>
+            Location de voiture
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'equipements')">
+            Equipements & pieces
+        </button>
+    </div>
+    
+    <!-- Tab content -->
+    <div id="categories" class="tabcontent">
+        <h3>Toutes Les categories</h3>
+        <form action="">
+            <div class="row mt-3">
+                <div class="col-3">
+                    <select name="categories" id="categories" class="px-5 py-2 w-100">
+                        <option value="catégorie">catégorie</option>
+                        <option value="vehicules">vehicules</option>
+                        <option value="voitures">voitures</option>
+                        <option value="moto-scooters">moto-scooters</option>
+                        <option value="location">location de voitures</option>
+                        <option value="equipements">equipements & pieces</option>
+                        <option value="utilitaires">utilitaires, van & minibus</option>
+                        <option value="engin-agricole">Engin agricole et de chantier </option>
+                        <option value="bateaux">Bateaux </option>
+                        <option value="camion-semi-remorques">camion & semi-remorques</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <select name="lieux" id="lieux" class="px-5 py-2 w-100">
+                        <option value="lieu">Lieux</option>
+                        <option value="autres">Autres</option>
+                        <option value="dakar">Dakar</option>
+                        <option value="diourbzel">Diourbel</option>
+                        <option value="fatick">Fatick</option>
+                        <option value="kaolack">Kaolack</option>
+                        <option value="kaffrine">Kaffrine</option>
+                        <option value="kedougou">Kedougou</option>
+                        <option value="kolda">Kolda</option>
+                        <option value="louga">Louga</option>
+                        <option value="matam">Matam</option>
+                        <option value="saint-louis">Saint-Louis</option>
+                        <option value="sine-saloum">Sine-saloum</option>
+                        <option value="sedhiou">Sedhiou</option>
+                        <option value="tambacounda">Tambacounda</option>
+                        <option value="thies">Thies</option>
+                        <option value="teletravail">Télétravail</option>
+                        <option value="ziguinchor">Ziguinchor</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                   <input class="px-5 py-2 w-100" type="number " placeholder="MAX PRIX" id="">
+                </div>
+                <div class="col-3">
+                    <input class="px-5 py-2 w-100"type="number " placeholder="MIN PRIX" id="">
+
+                </div>
+               
+            </div>
+            <div class="row mt-5 mb-4">
+                <div class="col-6 d-flex justify-content-start">
+                    <button class=" bg-primary border-0 w-75 text-light px-5 py-2"
+                      style="background-color:#4980c1 ;">recherche avancée</button>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <button class=" border-0 w-75 text-light px-5 py-2" style="background-color:#f0811d ;">recherche</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div id="votures" class="tabcontent">
+        <h3>Voitures</h3>
+        <form action="">
+            <div class="row mt-3">
+               
+                <div class="col-3">
+                    <select name="lieux" id="lieux" class="px-5 py-2 w-100">
+                        <option value="lieu">Lieux</option>
+                        <option value="autres">Autres</option>
+                        <option value="dakar">Dakar</option>
+                        <option value="diourbzel">Diourbel</option>
+                        <option value="fatick">Fatick</option>
+                        <option value="kaolack">Kaolack</option>
+                        <option value="kaffrine">Kaffrine</option>
+                        <option value="kedougou">Kedougou</option>
+                        <option value="kolda">Kolda</option>
+                        <option value="louga">Louga</option>
+                        <option value="matam">Matam</option>
+                        <option value="saint-louis">Saint-Louis</option>
+                        <option value="sine-saloum">Sine-saloum</option>
+                        <option value="sedhiou">Sedhiou</option>
+                        <option value="tambacounda">Tambacounda</option>
+                        <option value="thies">Thies</option>
+                        <option value="teletravail">Télétravail</option>
+                        <option value="ziguinchor">Ziguinchor</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                   <input class="px-5 py-2 w-100" type="number " placeholder="MAX PRIX" id="">
+                </div>
+                <div class="col-3">
+                    <input class="px-5 py-2 w-100"type="number " placeholder="MIN PRIX" id="">
+
+                </div>
+                <div class="col-3">
+                  <select name="etats" id="etats" class="px-5 py-2 w-100">
+                    <option value="etat">Etat</option>
+                    <option value="neuf">Neuf</option>
+                    <option value="reconditione">Reconditionné</option>
+                    <option value="occasion">occasion</option>
+                    <option value="venant">venant</option>
+                  </select>
+                </div>
+               
+            </div>
+            <div class="row mt-5 mb-4">
+                <div class="col-6 d-flex justify-content-start">
+                    <button class=" bg-primary border-0 w-75 text-light px-5 py-2"
+                      style="background-color:#4980c1 ;">recherche avancée</button>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <button class=" border-0 w-75 text-light px-5 py-2" style="background-color:#f0811d ;">recherche</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div id="moto-scooters" class="tabcontent">
+        <h3>Moto & moto-scooters</h3>
+        <form action="">
+            <div class="row mt-3">
+               
+                <div class="col-3">
+                    <select name="lieux" id="lieux" class="px-5 py-2 w-100">
+                        <option value="lieu">Lieux</option>
+                        <option value="autres">Autres</option>
+                        <option value="dakar">Dakar</option>
+                        <option value="diourbzel">Diourbel</option>
+                        <option value="fatick">Fatick</option>
+                        <option value="kaolack">Kaolack</option>
+                        <option value="kaffrine">Kaffrine</option>
+                        <option value="kedougou">Kedougou</option>
+                        <option value="kolda">Kolda</option>
+                        <option value="louga">Louga</option>
+                        <option value="matam">Matam</option>
+                        <option value="saint-louis">Saint-Louis</option>
+                        <option value="sine-saloum">Sine-saloum</option>
+                        <option value="sedhiou">Sedhiou</option>
+                        <option value="tambacounda">Tambacounda</option>
+                        <option value="thies">Thies</option>
+                        <option value="teletravail">Télétravail</option>
+                        <option value="ziguinchor">Ziguinchor</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                   <input class="px-5 py-2 w-100" type="number " placeholder="MAX PRIX" id="">
+                </div>
+                <div class="col-3">
+                    <input class="px-5 py-2 w-100"type="number " placeholder="MIN PRIX" id="">
+
+                </div>
+                <div class="col-3">
+                  <select name="etats" id="etats" class="px-5 py-2 w-100">
+                    <option value="etat">Etat</option>
+                    <option value="neuf">Neuf</option>
+                    <option value="reconditione">Reconditionné</option>
+                    <option value="occasion">occasion</option>
+                    <option value="venant">venant</option>
+                  </select>
+                </div>
+               
+            </div>
+            <div class="row mt-5 mb-4">
+                <div class="col-6 d-flex justify-content-start">
+                    <button class=" bg-primary border-0 w-75 text-light px-5 py-2"
+                      style="background-color:#4980c1 ;">recherche avancée</button>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <button class=" border-0 w-75 text-light px-5 py-2" style="background-color:#f0811d ;">recherche</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="location" class="tabcontent">
+        <h3>location de voiture</h3>
+        <form action="">
+            <div class="row mt-3">
+               
+                <div class="col-3">
+                    <select name="lieux" id="lieux" class="px-5 py-2 w-100">
+                        <option value="lieu">Lieux</option>
+                        <option value="autres">Autres</option>
+                        <option value="dakar">Dakar</option>
+                        <option value="diourbzel">Diourbel</option>
+                        <option value="fatick">Fatick</option>
+                        <option value="kaolack">Kaolack</option>
+                        <option value="kaffrine">Kaffrine</option>
+                        <option value="kedougou">Kedougou</option>
+                        <option value="kolda">Kolda</option>
+                        <option value="louga">Louga</option>
+                        <option value="matam">Matam</option>
+                        <option value="saint-louis">Saint-Louis</option>
+                        <option value="sine-saloum">Sine-saloum</option>
+                        <option value="sedhiou">Sedhiou</option>
+                        <option value="tambacounda">Tambacounda</option>
+                        <option value="thies">Thies</option>
+                        <option value="teletravail">Télétravail</option>
+                        <option value="ziguinchor">Ziguinchor</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                   <input class="px-5 py-2 w-100" type="number " placeholder="MAX PRIX" id="">
+                </div>
+                <div class="col-3">
+                    <input class="px-5 py-2 w-100"type="number " placeholder="MIN PRIX" id="">
+
+                </div>
+               
+               
+            </div>
+            <div class="row mt-5 mb-4">
+                <div class="col-12 d-flex justify-content-end">
+                    <button class=" border-0 w-25 text-light px-5 py-2" style="background-color:#f0811d ;">recherche</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="equipements" class="tabcontent">
+        <h3>Moto & moto-scooters</h3>
+        <form action="">
+            <div class="row mt-3">
+               
+                <div class="col-3">
+                    <select name="lieux" id="lieux" class="px-5 py-2 w-100">
+                        <option value="lieu">Lieux</option>
+                        <option value="autres">Autres</option>
+                        <option value="dakar">Dakar</option>
+                        <option value="diourbzel">Diourbel</option>
+                        <option value="fatick">Fatick</option>
+                        <option value="kaolack">Kaolack</option>
+                        <option value="kaffrine">Kaffrine</option>
+                        <option value="kedougou">Kedougou</option>
+                        <option value="kolda">Kolda</option>
+                        <option value="louga">Louga</option>
+                        <option value="matam">Matam</option>
+                        <option value="saint-louis">Saint-Louis</option>
+                        <option value="sine-saloum">Sine-saloum</option>
+                        <option value="sedhiou">Sedhiou</option>
+                        <option value="tambacounda">Tambacounda</option>
+                        <option value="thies">Thies</option>
+                        <option value="teletravail">Télétravail</option>
+                        <option value="ziguinchor">Ziguinchor</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                   <input class="px-5 py-2 w-100" type="number " placeholder="MAX PRIX" id="">
+                </div>
+                <div class="col-3">
+                    <input class="px-5 py-2 w-100"type="number " placeholder="MIN PRIX" id="">
+
+                </div>
+                <div class="col-3">
+                  <select name="etats" id="etats" class="px-5 py-2 w-100">
+                    <option value="etat">Etat</option>
+                    <option value="neuf">Neuf</option>
+                    <option value="reconditione">Reconditionné</option>
+                    <option value="occasion">occasion</option>
+                    <option value="venant">venant</option>
+                  </select>
+                </div>
+               
+            </div>
+            <div class="row mt-5 mb-4">
+               
+                <div class="row mt-5 mb-4">
+                    <div class="col-12 d-flex justify-content-end">
+                        <button class=" border-0 w-25 text-light px-5 py-2" style="background-color:#f0811d ;">recherche</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="row">
+        <div class="row">
+            <div class="col-sm-11 top-annonces">
+                <h4>Parcourir par les plus populaires</h4>
+
+            </div>
+            <div class="col-sm-1 arrow-block ">
+                    <div class="mt-3">
+                        <a href="" class="text-decoration-none">
+                            
+                            <h6 class="tout-voir"> Tout voir</h6> 
+                        </a>
+
+                    </div>
+                  
+            </div>
+        </div>
+        <div class="row mb-10 mt-3 d-flex justify-content-around">
+           <div class="col-sm-1 d-flex justify-content-center align-items-center">
+            <div class="card border-0" >
+                <a href="" class="text-decoration-none">
+                    <img src="https://www.expat-dakar.com/assets/ed-site/img/property-options/chevrolet.aadcdadf.svg"
+                    class="card-img-top" alt="...">
+                    <h6 class=" text-black">chevrolet</h6>
+                </a> 
+             
+            </div>
+            </div>
+           <div class="col-sm-1 d-flex justify-content-centera align-items-center">
+            <div class="card border-0" >
+                <a href="" class="text-decoration-none">
+                    <img src="https://www.expat-dakar.com/assets/ed-site/img/property-options/ford.ac8f762c.svg"
+                    class="card-img-top" alt="...">
+                    <h6 class=" text-black">ford</h6>
+                </a> 
+             
+            </div>
+            </div>
+           <div class="col-sm-1 d-flex justify-content-centera align-items-center">
+            <div class="card border-0" >
+                <a href="" class="text-decoration-none">
+                    <img src="https://www.expat-dakar.com/assets/ed-site/img/property-options/nissan.97db5bfb.svg"
+                    class="card-img-top" alt="...">
+                    <h6 class="  text-black">nissan</h6>
+
+                </a> 
+             
+            </div>
+            </div>
+           <div class="col-sm-1 d-flex justify-content-centera align-items-center">
+            <div class="card border-0" >
+                <a href="" class="text-decoration-none">
+                    <img src="https://www.expat-dakar.com/assets/ed-site/img/property-options/toyota.28905a65.svg"
+                    class="card-img-top" alt="...">
+                    <h6 class="  text-black">toyota</h6>
+
+                </a> 
+             
+            </div>
+            </div>
+           <div class="col-sm-1 d-flex justify-content-centera align-items-center">
+            <div class="card border-0" >
+                <a href="" class="text-decoration-none">
+                    <img src="https://www.expat-dakar.com/assets/ed-site/img/property-options/honda.82112125.svg"
+                    class="card-img-top" alt="...">
+                    <h6 class=" text-black">honda</h6>
+
+                </a> 
+             
+            </div>
+            </div>
+           <div class="col-sm-2 d-flex justify-content-centera align-items-center">
+            <div class="card border-0" >
+                <a href="" class="text-decoration-none">
+                    <img src="https://www.expat-dakar.com/assets/ed-site/img/property-options/volkswagen.f8e7b938.svg"
+                    class="card-img-top" alt="...">
+                    <h6 class="  text-black">volskswagen</h6>
+
+                </a> 
+             
+            </div>
+            </div>
+           <div class="col-sm-1 d-flex justify-content-centera align-items-center">
+            <div class="card border-0" >
+                <a href="" class="text-decoration-none">
+                    <img src="https://www.expat-dakar.com/assets/ed-site/img/property-options/mazda.83e8bfe1.svg"
+                    class="card-img-top" alt="...">
+                    <h6 class=" text-black">mazda</h6>
+
+                </a> 
+             
+            </div>
+            </div>
+           <div class="col-sm-1 d-flex justify-content-centera align-items-center">
+            <div class="card border-0" >
+                <a href="" class="text-decoration-none">
+                    <img src="https://www.expat-dakar.com/assets/ed-site/img/property-options/audi.4bbb0d1e.svg"
+                    class="card-img-top" alt="...">
+                    <h6 class=" text-black">audi</h6>
+
+                </a> 
+             
+            </div>
+            </div>
+           <div class="col-sm-1 d-flex justify-content-centera align-items-center">
+            <div class="card border-0" >
+                <a href="" class="text-decoration-none">
+                    <img src="https://www.expat-dakar.com/assets/ed-site/img/property-options/bmw.a4375682.svg"
+                    class="card-img-top" alt="...">
+                    <h6 class="  text-black">bmw</h6>
+
+                </a> 
+             
+            </div>
+            </div>
+         
+         
+          
+       </div>
+      
+    </div>
+</div>
+</div>
+
+
+{% block foot %}
+    {% include "bar/footer_inc.html" %}
+{% endblock foot %}
+{% endblock content %}

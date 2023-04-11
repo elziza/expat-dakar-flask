@@ -1,0 +1,22 @@
+    # necessary imports
+# define the alphabet
+    letters = string.ascii_letters # a à z
+    digits = string.digits # 0 à 9
+    special_chars = string.punctuation # caractere special
+    alphabet = letters + digits + special_chars # tous l'alphabet
+    # fix password length
+    username_length = 12
+    # generate password meeting constraints
+    while True:
+        username = ''
+        for i in range(username_length):
+            username += ''.join(secrets.choice(alphabet))
+        # doit avoir au moins un caractère special
+        # et au moins 2 chiffres
+        if (any(char in special_chars for char in username) and 
+            sum(char in digits for char in username)>=2):
+                break
+    nom_complet = username # username generé 
+    telephone = request.form.get("telephone")
+    password = request.form.get("password")
+    

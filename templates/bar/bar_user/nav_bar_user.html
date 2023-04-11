@@ -1,0 +1,84 @@
+{# 1er navbar #}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid " id="nav-1">
+            <div class=" nav-1-start" >
+                <div class="container">
+                    <a class="navbar-brand" href="{{ url_for('home_user') }}">
+                    <img src="https://www.expat-dakar.com/assets/ed-site/img/logo-colour.05769328.svg" alt="logo-expat-dakar" width="250" height="50">
+                    </a>
+                </div>
+                
+            </div>
+      <div class="nav-1-block-end">
+            <div class="nav-1-middle mx-5">
+                <form class="d-flex" role="search" action="{{url_for('annonces_user')}}" method="get">
+                    <input class="form-control me-2 bg-light input-width" type="search" name="recherche" placeholder="je recherche..." aria-label="Search">
+                    <button class="btn btn-outline-black bg-dark" type="submit">
+                        <i class="fa-solid fa-magnifying-glass "></i>
+                    </button>
+                </button>
+            </form>
+    
+            </div>
+            <div class="nav-1">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                    <a class="nav-link ">
+                        <button>vendre</button>
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link">
+                        <button style="background-color: #487fc1;">crédits</button>
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link">
+                        <i class="fa-regular fa-bell fa-2xl me-3"style="color: #f0811d;"></i>
+                    </a>
+                    </li>
+                    <li class="nav-item mt-1">    
+                        <div class="dropdown">
+                            <button onclick="myFunction()" class="dropbtn">
+                                <i class="fa-solid fa-user"></i>
+                            </button>
+                            <div id="myDropdown" class="dropdown-content">
+                              <a href="#">Compte & Profil</a>
+                              <a href="{{url_for('home_user')}}">Accueil</a>
+                              <a href="#">Gerer mes annonces</a>
+                              <a href="{{url_for('create_annonce1')}}">Publier une annonces</a>
+                              <a href="#">Mon showroom</a>
+                              <a href="#">Acheter des crédits</a>
+                              <a href="#">Mes favoris</a>
+                              <a href="#">Mes messages</a>
+                              <a href="#">Mes discussions</a>
+                              <a href="#">Gerer mes alertes</a>
+                              <a href="#">Mes Profils et CV</a>
+                              <a href="{{url_for('logout')}}">Deconnexion</a>
+                            </div>
+                        </div>                 
+                            
+                    </li>
+                </ul>
+
+            </div>
+      </div>
+    </div>
+    
+  </nav>
+  {# 2ieme navbar #}
+  <nav class="nav container-fluid" id="nav-2">
+
+    <a class="nav-link text-light side-left" href="{{ url_for('vehicules_user') }}">Véhicules</a>
+    <a class="nav-link text-light side-left" href="{{ url_for('emploi_user') }}">Offres d'emploi</a>
+    <a class="nav-link text-light side-left" href="{{ url_for('immobilier_user') }}">Immobilier</a>
+    <a class="nav-link text-light side-left" href="{{ url_for('multimedia_user') }}">Multimedia</a>
+    <a class="nav-link text-light side-left" href="{{ url_for('maison_user') }}">Maison</a>
+
+    <a class="nav-link text-light side-right1" href="{{ url_for('annonces_user') }}"><i class="fa-solid fa-bars"></i> Autres Catégories</a>  
+    <a class="nav-link text-light side-right2" href="#"><i class="fa-sharp fa-solid fa-bag-shopping"></i> Les Boutiques</a>   
+    <a class="nav-link text-light side-right3 " href="#"><i class="fa-solid fa-handshake"></i> Promo</a>
+  
+
+   
+  </nav>

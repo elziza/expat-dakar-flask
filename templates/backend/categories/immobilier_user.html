@@ -1,0 +1,218 @@
+{% extends "base/base_user.html" %}
+
+{% block title %}
+ | immobilier
+{% endblock  %}
+
+{% block side_bar_left_user %}
+<div class="col-sm-3">
+
+    <div class="row p-5">
+    
+        <form action="">
+            <label class="pb-3">Filtrer les résultats</label>
+            <input class="p-2" type="text" placeholder="Afficher les résultats de la recherche">
+    
+                <label class="pb-3 pt-3">Trier par</label>
+                <br>
+    
+                <select class="p-2 ps-3 pe-5" name="trier" id="trier">
+                    <option value="offres">Offres spéciales</option>
+                    <option selected value="recentes">plus recentes</option>
+                </select>
+        <h6 class="mt-4">Catégories</h6> <hr>
+        <div>
+            <a class="nav-link text-black " href="{{ url_for('annonces') }}">
+            <i class="fa-solid fa-bars icon-side-left pe-2"></i> Annonces</a>  
+        </div>
+        <div>
+            <a class="nav-link text-black " href="{{ url_for('immobilier') }}">
+                <i class="fa-solid fa-house icon-side-left pe-2"></i> immobilier 
+            <i class="fa-solid fa-circle-xmark icon-side-left ps-4"></i>  
+            </a> 
+        </div>
+        <hr>
+        <div>
+            <ul class="list-group">
+                <li class=" d-flex justify-content-between align-items-start ">
+                    <a href="#" class="text-decoration-none text-black">
+                        Appartemmnt à louer
+                    </a>
+                    <span class="badge icon-side-right rounded-circle me-2 mt-2">14</span>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h6 class="mt-4">Lieux</h6> <hr>
+            <div>
+                <ul class="list-group">
+                    <li class=" d-flex justify-content-between align-items-start ">
+                        <a href="#" class="text-decoration-none text-black">
+                            senegal
+                        </a>
+                    </li>
+                    <li class=" d-flex justify-content-between align-items-start ">
+                        <a href="#" class="text-decoration-none text-black ms-2 mt-2">
+                         Dakar 
+                        </a>
+                        <span class="badge icon-side-right rounded-circle me-2 mt-2">4</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+       
+        
+        <div class="dropdown">
+            <button class="btn btn-light text-bg-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Type de contrat
+            </button>
+            <ul class="dropdown-menu">
+            <li class=" d-flex justify-content-between align-items-start ">
+                    <a href="#" class="text-decoration-none text-black">
+                        temps partiel
+                    </a>
+                    <span class="badge icon-side-right rounded-circle me-2 mt-2">74</span>
+                </li>
+            <li class=" d-flex justify-content-between align-items-start ">
+                    <a href="#" class="text-decoration-none text-black">
+                        temps plein
+                    </a>
+                    <span class="badge icon-side-right rounded-circle me-2 mt-2">213</span>
+                </li>
+            </ul>
+        </div> 
+             <div class="row mt-3">
+                <button class="p-2 border-0 text-light" type="button" 
+                style="background-color: #f0811d;">
+                    <i class="fa-solid fa-filter"></i>
+                Filtrer
+            </button>
+            </div>
+        </form>
+       
+    </div>
+    </div>
+{% endblock side_bar_left_user %}
+    
+
+{% block content_user %}
+    <div class="col-sm-7 d-flex flex-column">
+                    
+       <div class="row">
+        
+            <span class="mt-5">
+                <a href="{{ url_for('home') }}" class="text-black text-decoration-none">Accueil</a>/
+                <a href="{{ url_for('annonces') }}" class="text-black text-decoration-none">Annonces</a>/
+                <a href="{{ url_for('immobilier') }}" class="text-black text-decoration-none">immobilier</a>
+            </span>
+       </div>
+       <div class="row mt-3">
+            <div class="col-4">
+                <h5>immobilier - Sénégal</h5>
+            </div>
+            <div class="col-3">
+                <p>352 résultats trouvés</p>
+            </div>
+            <div class="col-5 ">
+                <button class="p-2 border-0 text-light" type="button" 
+                 style="background-color: #f0811d;">
+                    <i class="fa-solid fa-envelope"></i>
+                    sauvegarder la recherche
+                </button>
+               
+            </div>
+            <div class="row">
+                <div class="col">
+                    {% for annonce in annonces %}  
+                    <ul>
+                    <li class="list-group">
+                       <a href="" class="text-black text-decoration-none">
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                              <div class="col-md-4 d-flex  align-items-center justify-content-start">
+                                <img src="{% if annonce.img_url==None: %}
+                                {{'config[NO_IMG]'}} {% else: %} {{annonce.img_url}} {% endif %}" 
+                                class="w-75" alt="">
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body">
+                                  <h5 class="card-title m-0">{{annonce.titre}}</h5>
+                                  {# <p class="card-text m-0">2 chambres</p> #}
+                                  <p class="card-text m-0">
+                                   <small>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    {{annonce.lieu}}
+                                   </small>
+                                  </p>
+                                  <p class="card-text m-0"><small class="text-muted">{{annonce.publier}} </small></p>
+                                </div><div class="row d-flex">
+                                    <div class="col">
+
+                                        <h5 class="card-title">{{annonce.prix}} F Cfa</h5>
+                                    </div>
+                                    <div class="col mb-2 ms-5">
+
+                                        <i class="fa-solid fa-phone-volume fa-2xl me-2 " style="color: #f0811d;"></i>
+                                        <i class="fa-brands fa-whatsapp fa-2xl me-2 " style="color: #34b11b;"></i>
+                                        <i class="fa-solid fa-comments fa-2xl" style="color: #f0811d;"></i>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                       </a>
+                    </li>
+                </ul>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col d-flex justify-content-center">
+                    <button class=" p-2 border-0 text-light" 
+                    style="background-color: #f0811d;">
+                    Voir Plus
+                    </button>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col d-flex justify-content-center">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination" >
+                          <li class="page-item" >
+                            <a class="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item"><a class="page-link" href="#">4</a></li>
+                          <li class="page-item"><a class="page-link" href="#">5</a></li>
+                          <li class="page-item"><a class="page-link" href="#">6</a></li>
+                          <li class="page-item"><a class="page-link" href="#">7</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </button>
+                </div>
+            </div>
+            
+       </div>
+    </div>
+
+    {% block foot_user %}
+    {% include "bar/bar_user/footer_inc_user.html" %}
+    {% endblock foot_user %}
+
+{% endblock content_user %}
+
+{% block side_bar_right_user %} 
+<div class="col-sm-2">
+
+    {% include "bar/bar_user/side_bar_right_user.html" %}   
+</div>
+{% endblock side_bar_right_user %}

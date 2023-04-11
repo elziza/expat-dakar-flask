@@ -1,0 +1,58 @@
+{# 1er navbar #}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid " id="nav-1">
+            <div class=" nav-1-start" >
+                <div class="container">
+                    <a class="navbar-brand" href="{{ url_for('home') }}">
+                    <img src="https://www.expat-dakar.com/assets/ed-site/img/logo-colour.05769328.svg" alt="logo-expat-dakar" width="250" height="50">
+                    </a>
+                </div>
+                
+            </div>
+      <div class="nav-1-block-end">
+            <div class="nav-1-middle mx-5">
+                <form class="d-flex" role="search" action="{{url_for('annonces')}}">
+                    <input class="form-control me-2 bg-light input-width" type="search" value="{{'recherche'}}" id="recherche" placeholder="je recherche" aria-label="Search">
+                    <button class="btn btn-outline-black bg-dark" type="submit">
+                        <i class="fa-solid fa-magnifying-glass "></i>
+                    </button>
+                    {# {% for annonce in annonces %}
+                    <h3>{{ annonce.titre }}</h3>
+                    <p>{{ annonce.description }}</p> #}
+                    <!-- ... -->
+                    {# {% endfor %} #}
+                </form>
+            </div>
+            <div class="nav-1-end">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                    <a class="nav-link ">
+                        <button>vendre</button>
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link text-dark" href="{{url_for('login')}}">Connexion/Inscription</a>
+                    </li>
+                </ul>
+
+            </div>
+      </div>
+    </div>
+    
+  </nav>
+  {# 2ieme navbar #}
+  <nav class="nav container-fluid" id="nav-2">
+
+    <a class="nav-link text-light side-left" href="{{ url_for('vehicules') }}">Véhicules</a>
+    <a class="nav-link text-light side-left" href="{{ url_for('emploi') }}">Offres d'emploi</a>
+    <a class="nav-link text-light side-left" href="{{ url_for('immobilier') }}">Immobilier</a>
+    <a class="nav-link text-light side-left" href="{{ url_for('multimedia') }}">Multimedia</a>
+    <a class="nav-link text-light side-left" href="{{ url_for('maison') }}">Maison</a>
+
+    <a class="nav-link text-light side-right1" href="{{ url_for('annonces') }}"><i class="fa-solid fa-bars"></i> Autres Catégories</a>  
+    <a class="nav-link text-light side-right2" href="#"><i class="fa-sharp fa-solid fa-bag-shopping"></i> Les Boutiques</a>   
+    <a class="nav-link text-light side-right3 " href="#"><i class="fa-solid fa-handshake"></i> Promo</a>
+  
+
+   
+  </nav>

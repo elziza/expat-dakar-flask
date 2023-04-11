@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+  {# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> #}
+       <title>{% block title %} expat-dakar {% endblock %}</title>
+</head>
+<body>
+    
+   <div class="row">
+    <div class="container-fluid d-flax justify-content-center">
+        <div class="d-flex justify-content-center border border-bottom-5" >
+                <a class="navbar-brand" href="{{ url_for('home') }}">
+                <img src="https://www.expat-dakar.com/assets/ed-site/img/logo-colour.05769328.svg" alt="logo-expat-dakar" width="250" height="50">
+                </a>
+        </div>
+</div>
+<div class="row " style="background-color: #f0f0f0;">
+    <div class="row">
+        <section class="vh-100  mt-5">
+            <div class="container h-75 w-50 border border-1 bg-white">
+                
+                  
+                    
+                    <div class="d-flex justify-content-center align-items-center mb-4 flex-column">
+                        <h1>Bienvenue sur Expat-Dakar</h1>
+                   <h6 class="text-center text-secondary">Pour acheter et vendre en toute sécurité, créez un compte ou <br> connnectez-vous.</h6>
+                      <form method="POST" class="d-flex justify-content-center flex-column w-100"> 
+                        <label for="telephone" class="text-center">Numéro de téléphone</label>
+                        <span class="d-flex justify-content-center w-100">
+                            <input type="text" placeholder="SN(+221)"  disabled class=" w-25 py-2 text-center">
+                        <input type="number" class="px-5 py-2 w-50 text-start"  name="telephone" id="telephone" placeholder="saisissez le numéro de telephone"> 
+                        </span>  
+                        <button type="submit" class="btn btn-primary px-5 py-2 mt-3  w-75" style="background-color: #f0811d; 
+                        margin-left:75px;">
+                          Continuer
+                        </button>           
+            
+                    </form>
+            
+                    <div class=" d-flex align-items-center mt-2 ">
+                      <p class="text-center fw-bold mx-3 mb-0 text-muted">OU</p>
+                    </div>
+          
+                    
+                    <a class="btn btn-primary px-5 py-2 w-75 m-2" style="background-color: #3b5998" href="#!"
+                      role="button">
+                      <i class="fab fa-facebook-f me-2"></i>utiliser un compte facebook
+                    </a>
+                   
+                    <a class="btn btn-primary px-5 py-2 mt-3 w-75" style="background-color: #ba3a29" href="#!"
+                      role="button">
+                      <i class="fa-brands fa-google"></i>utiliser un compte google
+                    </a>
+                    <h6 class="text-center text-secondary">
+                        En créant un compte et en vous connectant, vous <br>
+                         acceptez nos <a href="" class="text-decoration-none" style="color: #f0811d">Conditions et Charte d'utilisation.</a>  
+                    </h6>
+                  
+                 
+              
+                  <div class="row h-25 w-100 px-5 py-2 text-center" style="background-color: #f0f0f0;">
+                            <h6>Besoin d'aide ?<a href="" class="text-decoration-none " style="color: #f0811d"> Contactez-nous.</a></h6>
+                       </div>
+            </div>
+          </section>   
+           <div class="row d-flex justify-content-around text-center bg-white w-75 p-3"
+           style="margin-top: -100px; margin-left:150px">
+                 <h5 class="mb-3">Avantages d'un compte</h5>
+          <div class="col-3">
+            <p>
+              <i class="fa-sharp fa-solid fa-certificate fa-2xl"  style="color: #f0811d"></i>
+              Les vendeurs certifiés gagnent la confiance des acheteurs
+            </p>
+          </div>
+          <div class="col-3">
+            <p>
+             <i class="fa-solid fa-lock fa-2xl"  style="color: #f0811d"></i>
+              Obtenez une assistance personnalisée
+            </p>
+          </div>
+          <div class="col-3">
+            <p>
+            <i class="fa-regular fa-table-columns fa-2xl" style="color: #f0811d"></i>
+            
+              Accédez à notre tableau de bord vendeur
+            </p>
+          </div>
+          <div class="col-3">
+            <p>
+              <i class="fa-solid fa-tag fa-2xl" style="color: #f0811d"></i>
+              Accéder aux annonces gratuites
+            </p>
+        </div>
+              </div>
+          </div>
+          <div class="text-center p-3" style="background-color: black; color:white;">
+            <div class="row">
+              <div class="col-6">
+                Tous droits réservés © 2016-2023 Expat-Dakar
+              </div>
+              <div class="col-6">
+               <a href="" class="text-decoration-none text-white">
+                Conditions et chartes d'utilisation
+               </a>
+              </div>
+            </div>
+        </div>
+</div>
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script> 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="static/script.js"></script>
+    <script src="https://kit.fontawesome.com/6bb0a03e98.js" crossorigin="anonymous"></script>
+   
+</body>
+</html>
+   
+
+    

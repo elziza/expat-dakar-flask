@@ -1,0 +1,34 @@
+creation BD
+image
+date et heure
+prix
+lieu
+description
+reference de l'annonce
+-------------
+pour creer une annonce il faut:
+choisir une categorie
+telecharger des photos de l'annonce
+les details de l'annonce:
+titre 
+prix 
+description
+details de l'adresse:
+region/ville
+livraison offerte (non,N/A,oui)
+details du contact: 
+nom et prenom
+email
+numero de telephone
+ajouter une option de visibilité:
+annonce vip
+annonce à la une 
+annonce standard
+approbation des annonces:
+aperçu de l'annonce
+details du commande de l'annonce
+-------------
+l'utlisateur peut
+voir son compte et profil,aller à l'accueil, gerer ces annonces, publier un annonce,
+voir historique de ses achats, voir son showroom,acheter des credits, voir ses favoris,
+voir ses messages, voir ses discussions,gerer ses alertes, voir ses profil et cv, deconnecter
